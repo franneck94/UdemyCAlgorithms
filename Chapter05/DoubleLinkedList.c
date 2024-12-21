@@ -129,6 +129,12 @@ value_type_t popBack(list_t *const list)
     }
 
     node_t *node = list->back;
+
+    if (NULL == node)
+    {
+        return NO_VALUE;
+    }
+
     const value_type_t value = *(node->value);
 
     if (list->size > 1u)
@@ -180,6 +186,12 @@ value_type_t popFront(list_t *list)
     }
 
     node_t *node = list->front;
+
+    if (NULL == node)
+    {
+        return NO_VALUE;
+    }
+
     const value_type_t value = *(node->value);
 
     if (list->size > 1u)
